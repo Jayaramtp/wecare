@@ -27,3 +27,4 @@ class UserResourcePermission(Base):
         return f"<UserResourcePermission(id={self.id}, user_id={self.user_id}, resource={self.resource}, action={self.action})>"
 
 
+

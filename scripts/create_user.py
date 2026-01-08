@@ -70,3 +70,4 @@ if __name__ == "__main__":
     create_user(username, email, password, full_name, is_superuser)
 
 
+

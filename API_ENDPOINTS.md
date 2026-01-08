@@ -191,4 +191,82 @@ Authorization: Bearer {access_token}
 - Use `device_id` for persistent login across app restarts
 - Superusers have all permissions automatically
 
+## User Management Endpoints
+
+### 8. Create User
+**POST** `/users/`
+
+**Headers:**
+```
+Authorization: Bearer {access_token}
+```
+
+**Request:**
+```json
+{
+    "username": "string",
+    "email": "user@example.com",
+    "password": "string",
+    "full_name": "string (optional)"
+}
+```
+
+**Response:**
+```json
+{
+    "id": 1,
+    "username": "string",
+    "email": "string",
+    "full_name": "string",
+    "is_active": true,
+    "is_superuser": false,
+    "created_at": "datetime",
+    "updated_at": "datetime",
+    "last_login": null
+}
+```
+
+---
+
+### 9. Update User
+**PUT** `/users/{user_id}`
+
+**Headers:**
+```
+Authorization: Bearer {access_token}
+```
+
+**Request:**
+```json
+{
+    "email": "new@example.com",
+    "full_name": "New Name",
+    "password": "newpassword",
+    "is_active": true
+}
+```
+
+**Response:**
+```json
+{ /* updated user object same as create response */ }
+```
+
+---
+
+### 10. Delete User
+**DELETE** `/users/{user_id}`
+
+**Headers:**
+```
+Authorization: Bearer {access_token}
+```
+
+**Response:**
+```json
+{
+    "message": "User deleted"
+}
+```
+
+
 
